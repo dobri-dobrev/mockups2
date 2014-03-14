@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CHURND</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap-responsive.min.css"> -->
+    <!--<style>
+/*        body {
+           padding-top: 60px; 
+        }*/
+    </style>-->
+    <style type="text/css">
+
+    .example-orbit img {
+  width: 100%;
+  height: auto;
+}
+
+
+    </style>
+
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/foundation.min.js"></script>
+  </head>
+  <body>
+
+<div class="fixed">
+<nav class="top-bar" data-topbar="">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">Churnd</a></h1>
+      </li>
+      <!-- For mobile devices -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+        <li><a href="/">Home</a></li>
+        <li class="divider"></li>
+        <li><a href="/account">Dashboard</a></li>
+        <li class="divider"></li>
+        <li><a href="/">Contact</a></li>
+
+      </ul>
+
+      <!-- Right Nav Section -->
+      <ul class="right show-for-large-up">
+        <!-- <li class="has-dropdown not-click"> -->
+        <% if session[:name] != nil %>
+        <li>
+          <a href="/logout">Logout</a>
+<!--            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+            <li><a href="#">Account Details</a></li>
+          </ul> -->
+        </li> 
+        <% else %>
+        <li>
+          <a href="/account">Login</a>
+        </li>
+        <% end %>
+      </ul>
+      <!-- End Navs -->
+    </section>
+  </nav>
+</div>
+
+  
+<ul class="example-orbit" data-orbit>
+  <li>
+    <img src="img/logo.jpg" alt="slide 1" />
+    <div class="orbit-caption text-center">
+      <div class="row">
+         <a href="#" class="radius button" data-reveal-id="emailModal">Sign up Now!</a>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+  
+
+
+<!-- Three-up Content Blocks -->
+
+  <div class="row">
+    <div class="large-4 columns">
+      <h4>User Tracking</h4>
+      <p>Churnd tracks individual and group usage behavior to determine density and frequency of behavior across individual software features.</p>
+    </div>
+    
+    <div class="large-4 columns">
+      <h4>Predictive Analytics</h4>
+      <p>Churnd’s algorithm leverage trend analysis of user behavior to identify the likelihood of customer churn, as well as the likely reason for retention.</p>
+    </div>
+    
+    <div class="large-4 columns">
+      <h4>Retention Automation</h4>
+      <p>Churnd automates retention functions based on client-specified churn triggers.</p>
+    </div>
+  
+    </div>
+
+    <div id="emailModal" class="reveal-modal" data-reveal>
+      <h2>Sign up!</h2>
+      <form>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Name
+              <input type="text" id="name_field" placeholder="eg. John">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <label>Email
+              <input type="text" id="email_field" placeholder="abc@cde.com">
+            </label>
+          </div>
+            <div class="row"> <div class="small-12">  <div class="row">
+          <a href="#" id="sign_up_button" class="radius button right">Submit</a>
+          </div> 
+        </form>
+    </div>
+
+    <!-- Footer -->
+  
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright Churnd</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+
+      <script>
+  $(document).foundation();
+  var doc = document.documentElement;
+  doc.setAttribute('data-useragent', navigator.userAgent);
+  </script>
+  <script src="js/signup.js"></script>
+  </body>
+</html>
